@@ -1,20 +1,24 @@
-import logo from './logo.svg';
 import './App.css';
-import Example from './components/Header';
+import MenuHeader from './components/Header';
+import Home from './pages/Home';
+import Projects from './pages/Projects';
+import About from './pages/About';
+import Contact from './pages/Contact';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import React from 'react';
+
 
 function App() {
   return (
-    <div className="App">
-      <Example/>
-      <div className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Hola a todos soy Jean Vega.</p>
-        <p>Esta es mi sitio web personal. Es construido con React.</p>
-        <h1 className="text-3xl font-bold underline">
-        Hello world!
-        </h1>
-      </div>
-    </div>
+    <Router>
+      <MenuHeader/>
+      <Routes>
+        <Route path="/" exact element={<Home/>} />
+        <Route path="/projects" element={<Projects/>} />
+        <Route path="/about" element={<About/>} />
+        <Route path="/contact" element={<Contact/>} />
+      </Routes>
+    </Router>
   );
 }
 
