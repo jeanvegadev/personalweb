@@ -1,10 +1,12 @@
 // Home.js
 import React from 'react';
+import jean from '../assets/images/jean_photo.png'
 
 const Home = () => {
   return (
-    <div className="relative isolate px-6 pt-1 lg:px-8">
-        <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-36">
+    
+    <div className="container mx-auto flex flex-col md:flex-row items-center justify-center md:justify-between px-6 pt-1 lg:px-8">
+        <div className="mx-auto w-3/5 md:w-3/5 py-4 sm:py-4 lg:py-4 order-2 md:order-1">
           <div className="text-center">
             <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
               Hi, I'm Jean Vega
@@ -13,7 +15,7 @@ const Home = () => {
               and welcome to my website
             </h2>
             <p className="mt-6 text-lg leading-8 text-gray-600">
-              I'm a software engineer. I have over 3 years of experience and I am skilled programmer using Python, SQL and Javascript. I also have worked with C, C++, Assembly, Java among others.
+              I'm a software developer from Peru and have over 3 years of experience and I'm a skilled programmer using Python, SQL and Javascript. I also have worked with C, C++, Assembly, Java among others.
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <a
@@ -27,6 +29,10 @@ const Home = () => {
               </a>
             </div>
           </div>
+        </div>
+        
+        <div class="w-2/5 md:w-2/5 mx-auto py-4 px-6 order-1 md:order-2">
+            <img src={jean} alt="jean" class="rounded-full"/>
         </div>
     </div>
   );
