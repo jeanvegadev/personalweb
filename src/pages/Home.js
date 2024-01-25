@@ -1,6 +1,6 @@
 // Home.js
 import React from 'react';
-import jean from '../assets/images/jean_photo.png'
+import jean from '../assets/images/jean_img.jpg'
 
 const Home = () => {
   return (
