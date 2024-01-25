@@ -7,13 +7,13 @@ const Home = () => {
         <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-36">
           <div className="text-center">
             <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-              Hi, I am Jean Vega
+              Hi, I'm Jean Vega
             </h1>
             <h2 className="text-3xl font-bold tracking-tight text-blue-500 sm:text-4xl">
               and welcome to my website
             </h2>
             <p className="mt-6 text-lg leading-8 text-gray-600">
-              I am a software engineer. I have over 3 years of experience and I am skilled programmer using Python, SQL and Javascript. I also have worked with C, C++, Assembly, Java among others.
+              I'm a software engineer. I have over 3 years of experience and I am skilled programmer using Python, SQL and Javascript. I also have worked with C, C++, Assembly, Java among others.
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <a
