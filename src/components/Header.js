@@ -1,15 +1,19 @@
 import { useState } from 'react'
 import logo from '../logo.svg';
-import { Dialog,  Popover } from '@headlessui/react'
+import { Dialog,  Popover, Switch } from '@headlessui/react'
 import {
   Bars3Icon,
   XMarkIcon
 } from '@heroicons/react/24/outline'
 import { Link } from 'react-router-dom';
 
+function classNames(...classes) {
+  return classes.filter(Boolean).join(' ')
+}
 
 export default function MenuHeader({toggleDarkMode}) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [agreed, setAgreed] = useState(false)
 
   return (
     <header>
@@ -36,12 +40,25 @@ export default function MenuHeader({toggleDarkMode}) {
           <Link to="/about">About me</Link>
           <Link to="/contact">Contact</Link>
         </Popover.Group>
-        <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-            <button
-            className="px-4 py-2 rounded bg-blue-500 text-white"
-            onClick={toggleDarkMode}>
-            Toggle Dark Mode
-          </button>
+        <div className="flex lg:flex lg:flex-1 lg:justify-end">
+        <Switch
+                checked={agreed}
+                onClick={toggleDarkMode}
+                onChange={setAgreed}
+                className={classNames(
+                  agreed ? 'bg-indigo-600' : 'bg-gray-200',
+                  'flex w-8 flex-none cursor-pointer rounded-full p-px ring-1 ring-inset ring-gray-900/5 transition-colors duration-200 ease-in-out focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600'
+                )}
+              >
+                <span className="sr-only">Agree to policies</span>
+                <span
+                  aria-hidden="true"
+                  className={classNames(
+                    agreed ? 'translate-x-3.5' : 'translate-x-0',
+                    'h-4 w-4 transform rounded-full bg-white shadow-sm ring-1 ring-gray-900/5 transition duration-200 ease-in-out'
+                  )}
+                />
+              </Switch>
         </div>
       </nav>
       <Dialog as="div" className="lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
