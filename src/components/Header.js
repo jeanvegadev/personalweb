@@ -8,11 +8,11 @@ import {
 import { Link } from 'react-router-dom';
 
 
-export default function MenuHeader() {
+export default function MenuHeader({toggleDarkMode}) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
-    <header className="bg-white">
+    <header>
       <nav className="mx-auto flex max-w-7xl items-center justify-between p-3 lg:px-8" aria-label="Global">
         <div className="flex lg:flex-1">
           <a href="#" className="-m-1.5">
@@ -37,9 +37,11 @@ export default function MenuHeader() {
           <Link to="/contact">Contact</Link>
         </Popover.Group>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
-            Log in <span aria-hidden="true">&rarr;</span>
-          </a>
+            <button
+            className="px-4 py-2 rounded bg-blue-500 text-white"
+            onClick={toggleDarkMode}>
+            Toggle Dark Mode
+          </button>
         </div>
       </nav>
       <Dialog as="div" className="lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>

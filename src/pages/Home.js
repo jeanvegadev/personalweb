@@ -2,14 +2,14 @@
 import React from 'react';
 import jean from '../assets/images/jean_photo4.jpg'
 
-const Home = () => {
+const Home = ({h1color}) => {
   return (
     
     <div className="container mx-auto flex flex-col md:flex-row items-center justify-center md:justify-between px-6 pt-1 lg:px-8">
         <div className="mx-auto w-3/5 md:w-3/5 py-4 sm:py-4 lg:py-4 order-2 md:order-1">
           <div className="text-center">
-            <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-              Hi, I'm Jean Vega
+            <h1 className="text-4xl font-bold tracking-tight sm:text-6xl">
+              <span className={h1color}>Hi, I'm Jean Vega</span>
             </h1>
             <h2 className="text-3xl font-bold tracking-tight text-blue-500 sm:text-4xl">
               and welcome to my website
@@ -24,7 +24,7 @@ const Home = () => {
               >
                 Projects
               </a>
-              <a href="Contact" className="text-sm font-semibold leading-6 text-gray-900">
+              <a href="Contact" className="text-sm font-semibold leading-6">
                 Contact <span aria-hidden="true">→</span>
               </a>
             </div>
