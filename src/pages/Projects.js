@@ -15,13 +15,13 @@ const Projects = () => {
         <li class="my-10 mx-4">
           <SpecificRepoStars repoName="Django-webpage"/>
           <div>
-            <a href="https://github.com/jeanvegadev/Django-webpage" target="_blank" rel="noopener" class="text-blue-600 hover:underline"><strong>Django Web</strong></a> - <span>This a Web application built with Django and Bootstrap.</span>
+            <a href="https://github.com/jeanvegadev/Django-webpage" target="_blank" rel="noopener" class="text-blue-600 hover:underline"><strong>Django Web</strong></a> - <span>This is a web application built with Django and Bootstrap.</span>
           </div>
         </li>
         <li class="my-10 mx-4">
           <SpecificRepoStars repoName="ESP32CamWebServer"/>
           <div>
-            <a href="https://github.com/jeanvegadev/ESP32CamWebServer" target="_blank" rel="noopener" class="text-blue-600 hover:underline"><strong>ESP32Cam WebServer</strong></a> - <span>This a web server built using the ESP32Cam.</span>
+            <a href="https://github.com/jeanvegadev/ESP32CamWebServer" target="_blank" rel="noopener" class="text-blue-600 hover:underline"><strong>ESP32Cam WebServer</strong></a> - <span>This is a web server built using the ESP32Cam.</span>
           </div>
         </li>
         <li class="my-10 mx-4">
