@@ -1,6 +1,7 @@
 // Home.js
 import React from 'react';
 import jean from '../assets/images/jean_photo4.jpg'
+import { Link } from 'react-router-dom';
 
 const Home = ({h1color}) => {
   return (
@@ -18,15 +19,8 @@ const Home = ({h1color}) => {
               I'm a software developer from Peru and have over 3 years of experience and I'm a skilled programmer using Python, SQL and Javascript. I also have worked with C, C++, Assembly, Java among others.
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
-              <a
-                href="/Projects"
-                className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-              >
-                Projects
-              </a>
-              <a href="Contact" className="text-sm font-semibold leading-6">
-                Contact <span aria-hidden="true">→</span>
-              </a>
+              <Link to="/projects" className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Projects</Link>
+              <Link to="/contact" className="text-sm font-semibold leading-6">Contact <span aria-hidden="true">→</span></Link>
             </div>
           </div>
         </div>
