@@ -20,10 +20,12 @@ function App() {
   const containerClasses = isDarkMode ? 'bg-gray-900 text-white min-h-screen' : 'bg-white text-black ';
   const h1color = isDarkMode ? 'text-white' : 'text-gray-900'
 
+  const containerClasses2 = isDarkMode ? 'bg-gray-900 text-white' : 'bg-white text-black';
+
   return (
     <div className={containerClasses}>
       <Router>
-      <MenuHeader toggleDarkMode={toggleDarkMode}/>
+      <MenuHeader toggleDarkMode={toggleDarkMode} c1={containerClasses2}/>
       <Routes>
         <Route path="/" exact element={<Home h1color={h1color}/>} />
         <Route path="/projects" element={<Projects/>} />
