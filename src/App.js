@@ -20,7 +20,6 @@ function App() {
   // Apply classes based on the current mode
   const containerClasses = isDarkMode ? 'bg-gray-900 text-white min-h-screen' : 'bg-white text-black ';
   const h1color = isDarkMode ? 'text-white' : 'text-gray-900'
-
   const containerClasses2 = isDarkMode ? 'bg-gray-900 text-white' : 'bg-white text-black';
 
   return (
