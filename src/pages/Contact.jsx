@@ -1,27 +1,40 @@
 import React from 'react';
 
+const YouTubeIcon = () => (
+  <svg className="w-full h-full" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+    <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+  </svg>
+);
+
 const Contact = () => {
   const contactMethods = [
     {
-      icon: '✉️',
+      icon: <span className="text-4xl">✉️</span>,
       label: 'Email',
       value: 'jcvega.dev@gmail.com',
       link: 'mailto:jcvega.dev@gmail.com',
       description: 'Reach out for collaborations or inquiries'
     },
     {
-      icon: '💼',
+      icon: <span className="text-4xl">💼</span>,
       label: 'LinkedIn',
       value: 'Jean Carlos Vega',
       link: 'https://linkedin.com/in/jean-carlos-vega',
       description: 'Connect with me professionally'
     },
     {
-      icon: '🐙',
+      icon: <span className="text-4xl">🐙</span>,
       label: 'GitHub',
       value: 'jeanvegadev',
       link: 'https://github.com/jeanvegadev',
       description: 'Check out my repositories'
+    },
+    {
+      icon: <div className="w-14 h-14 text-red-600"><YouTubeIcon /></div>,
+      label: 'YouTube',
+      value: '@jeandevega',
+      link: 'https://www.youtube.com/@jeandevega',
+      description: 'Subscribe to my coding content'
     }
   ];
 
@@ -34,11 +47,11 @@ const Contact = () => {
           <p className="text-lg text-gray-600">Feel free to reach out for collaboration, project inquiries, or just to say hello</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {contactMethods.map((method, index) => (
             <a key={index} href={method.link} target="_blank" rel="noopener noreferrer" className="group">
               <div className="bg-white rounded-xl p-8 h-full shadow-md hover:shadow-xl transition-all duration-300 border border-slate-100 hover:border-indigo-300 cursor-pointer hover:scale-105">
-                <div className="text-5xl mb-4 transform group-hover:scale-110 transition-transform duration-300">{method.icon}</div>
+                <div className="text-5xl mb-4 transform group-hover:scale-110 transition-transform duration-300">{typeof method.icon === 'string' ? method.icon : method.icon}</div>
                 <h3 className='text-xl font-bold text-gray-900 mb-2 group-hover:text-indigo-600 transition-colors'>{method.label}</h3>
                 <p className="text-indigo-600 font-semibold mb-3 break-all">{method.value}</p>
                 <p className="text-sm text-gray-600">{method.description}</p>

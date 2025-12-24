@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Dialog,  Popover, Switch } from '@headlessui/react'
+import { Dialog,  Popover } from '@headlessui/react'
 import {
   Bars3Icon,
   XMarkIcon
@@ -9,9 +9,8 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
-export default function MenuHeader({toggleDarkMode, c1}) {
+export default function MenuHeader({c1}) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const [agreed, setAgreed] = useState(false)
 
   const baseClassName = 'fixed inset-y-0 right-0 z-10 w-full overflow-y-auto px-6 py-6 sm:max-w-sm sm:ring-2 sm:ring-green-900/90';
   const combinedClassName = `${baseClassName} ${c1}`;
@@ -43,27 +42,7 @@ export default function MenuHeader({toggleDarkMode, c1}) {
           <a href="#about" className="px-3 py-2 text-sm font-semibold text-gray-700 hover:text-indigo-600 hover:bg-gray-50 rounded-lg transition-all duration-200">About me</a>
           <a href="#contact" className="px-3 py-2 text-sm font-semibold text-gray-700 hover:text-indigo-600 hover:bg-gray-50 rounded-lg transition-all duration-200">Contact</a>
         </Popover.Group>
-        <div className="flex lg:flex lg:flex-1 lg:justify-end lg:items-center lg:gap-4">
-          <div className="p-1 bg-gray-100 rounded-full flex items-center">
-            <Switch
-              checked={agreed}
-              onClick={toggleDarkMode}
-              onChange={setAgreed}
-              className={classNames(
-                agreed ? 'bg-indigo-600' : 'bg-gray-300',
-                'flex w-10 flex-none cursor-pointer rounded-full p-px ring-1 ring-inset ring-gray-900/10 transition-colors duration-200 ease-in-out focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600'
-              )}
-            >
-              <span className="sr-only">Toggle dark mode</span>
-              <span
-                aria-hidden="true"
-                className={classNames(
-                  agreed ? 'translate-x-4' : 'translate-x-0.5',
-                  'h-4 w-4 transform rounded-full bg-white shadow-md ring-1 ring-gray-900/10 transition duration-200 ease-in-out'
-                )}
-              />
-            </Switch>
-          </div>
+        <div className="flex lg:flex-1 lg:justify-end">
         </div>
       </nav>
       <Dialog as="div" className="lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
