@@ -17,7 +17,7 @@ const About = () => {
         
         <div className="prose prose-lg max-w-none mb-12">
           <p className="text-lg leading-relaxed text-gray-700 mb-6">
-            I'm a <span className='text-indigo-600 font-semibold'>software developer</span> passionate about building elegant solutions and learning new technologies. With a solid foundation in electronics engineering and years of hands-on experience, I've developed expertise across the full technology stack.
+            I'm a <span className='text-indigo-600 font-semibold'>software engineer</span> passionate about building elegant solutions and learning new technologies. With a solid foundation in electronics engineering and years of hands-on experience, I've developed expertise across the full technology stack.
           </p>
           <p className="text-lg leading-relaxed text-gray-700 mb-6">
             My journey began at the National University of Engineering in Peru, where I earned my degree. Since then, I've continuously expanded my skills through practical projects, online resources, and real-world challenges.
