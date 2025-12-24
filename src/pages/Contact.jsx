@@ -28,15 +28,16 @@ const Contact = () => {
       value: 'jeanvegadev',
       link: 'https://github.com/jeanvegadev',
       description: 'Check out my repositories'
-    },
-    {
-      icon: <div className="w-14 h-14 text-red-600"><YouTubeIcon /></div>,
-      label: 'YouTube',
-      value: '@jeandevega',
-      link: 'https://www.youtube.com/@jeandevega',
-      description: 'Subscribe to my coding content'
     }
   ];
+
+  const youtubeChannel = {
+    icon: <div className="w-14 h-14 text-red-600"><YouTubeIcon /></div>,
+    label: 'YouTube',
+    value: '@jeandevega',
+    link: 'https://www.youtube.com/@jeandevega',
+    description: 'Subscribe to my coding content'
+  };
 
   return (
     <section id="contact" className="py-20 lg:py-28 px-6 lg:px-8 bg-gradient-to-br from-indigo-50 to-blue-50">
@@ -47,7 +48,7 @@ const Contact = () => {
           <p className="text-lg text-gray-600">Feel free to reach out for collaboration, project inquiries, or just to say hello</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {contactMethods.map((method, index) => (
             <a key={index} href={method.link} target="_blank" rel="noopener noreferrer" className="group">
               <div className="bg-white rounded-xl p-8 h-full shadow-md hover:shadow-xl transition-all duration-300 border border-slate-100 hover:border-indigo-300 cursor-pointer hover:scale-105">
@@ -58,6 +59,28 @@ const Contact = () => {
               </div>
             </a>
           ))}
+        </div>
+
+        {/* Featured YouTube Channel */}
+        <div className="mt-12">
+          <a href={youtubeChannel.link} target="_blank" rel="noopener noreferrer" className="group block">
+            <div className="bg-gradient-to-r from-red-500 to-red-600 rounded-xl p-10 shadow-lg hover:shadow-2xl transition-all duration-300 border border-red-400 hover:scale-105">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-6">
+                  <div className="w-20 h-20 text-white transform group-hover:scale-110 transition-transform duration-300"><YouTubeIcon /></div>
+                  <div>
+                    <span className="inline-block px-3 py-1 mb-2 bg-white bg-opacity-30 text-white text-xs font-semibold rounded-full">FEATURED</span>
+                    <h3 className='text-2xl md:text-3xl font-bold text-white mb-2'>{youtubeChannel.label}</h3>
+                    <p className="text-white text-opacity-90">{youtubeChannel.description}</p>
+                  </div>
+                </div>
+                <div className="text-right">
+                  <p className="text-white text-lg font-semibold">{youtubeChannel.value}</p>
+                  <p className="text-white text-opacity-80 text-sm">Subscribe to my channel</p>
+                </div>
+              </div>
+            </div>
+          </a>
         </div>
 
         <div className="mt-16 text-center p-8 bg-white rounded-xl shadow-md border border-slate-100">
