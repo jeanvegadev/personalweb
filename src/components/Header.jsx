@@ -5,7 +5,6 @@ import {
   Bars3Icon,
   XMarkIcon
 } from '@heroicons/react/24/outline'
-import { Link } from 'react-router-dom';
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
@@ -38,10 +37,10 @@ export default function MenuHeader({toggleDarkMode, c1}) {
           </button>
         </div>
         <Popover.Group className="hidden lg:flex lg:gap-x-12">
-          <Link to="/">Home</Link>
-          <Link to="/projects">Projects</Link>
-          <Link to="/about">About me</Link>
-          <Link to="/contact">Contact</Link>
+          <a href="#home">Home</a>
+          <a href="#projects">Projects</a>
+          <a href="#about">About me</a>
+          <a href="#contact">Contact</a>
         </Popover.Group>
         <div className="flex lg:flex lg:flex-1 lg:justify-end">
         <Switch
@@ -89,10 +88,10 @@ export default function MenuHeader({toggleDarkMode, c1}) {
           <div className="mt-6 flow-root">
             <div className="-my-6 divide-y divide-gray-500/10">
               <div className="space-y-2 py-6">
-                <Link to="/" onClick={() => setMobileMenuOpen(false)}  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 hover:bg-gray-50">Home</Link>
-                <Link to="/projects" onClick={() => setMobileMenuOpen(false)}  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7  hover:bg-gray-50">Projects</Link>
-                <Link to="/about" onClick={() => setMobileMenuOpen(false)}  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 hover:bg-gray-50">About me</Link>
-                <Link to="/contact" onClick={() => setMobileMenuOpen(false)}  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 hover:bg-gray-50">Contact</Link>
+                <a href="#home" onClick={() => setMobileMenuOpen(false)}  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 hover:bg-gray-50">Home</a>
+                <a href="#projects" onClick={() => setMobileMenuOpen(false)}  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7  hover:bg-gray-50">Projects</a>
+                <a href="#about" onClick={() => setMobileMenuOpen(false)}  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 hover:bg-gray-50">About me</a>
+                <a href="#contact" onClick={() => setMobileMenuOpen(false)}  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 hover:bg-gray-50">Contact</a>
               </div>
             </div>
           </div>

@@ -1,10 +1,6 @@
 import './App.css';
 import MenuHeader from './components/Header';
-import Home from './pages/Home';
-import Projects from './pages/Projects';
-import About from './pages/About';
-import Contact from './pages/Contact';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import SinglePage from './pages/SinglePage';
 import React , { useState } from 'react';
 import { Analytics } from '@vercel/analytics/react';
 
@@ -24,16 +20,9 @@ function App() {
 
   return (
     <div className={containerClasses}>
-      <Router>
       <MenuHeader toggleDarkMode={toggleDarkMode} c1={containerClasses2}/>
-      <Routes>
-        <Route path="/" exact element={<Home h1color={h1color}/>} />
-        <Route path="/projects" element={<Projects/>} />
-        <Route path="/about" element={<About/>} />
-        <Route path="/contact" element={<Contact/>} />
-      </Routes>
+      <SinglePage h1color={h1color}/>
       <Analytics />
-      </Router>
     </div>
     
   );
