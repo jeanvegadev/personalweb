@@ -76,17 +76,17 @@ const Contact = () => {
         {/* Featured YouTube Channel */}
         <div className="mt-12">
           <a href={youtubeChannel.link} target="_blank" rel="noopener noreferrer" className="group block">
-            <div className="bg-gradient-to-r from-red-500 to-red-600 rounded-xl p-10 shadow-lg hover:shadow-2xl transition-all duration-300 border border-red-400 hover:scale-105">
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-6">
-                  <div className="w-20 h-20 text-white transform group-hover:scale-110 transition-transform duration-300"><YouTubeIcon /></div>
+            <div className="bg-gradient-to-r from-red-500 to-red-600 rounded-xl p-6 md:p-10 shadow-lg hover:shadow-2xl transition-all duration-300 border border-red-400 hover:scale-105">
+              <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+                <div className="flex items-center gap-4 md:gap-6">
+                  <div className="w-16 h-16 md:w-20 md:h-20 text-white flex-shrink-0 transform group-hover:scale-110 transition-transform duration-300"><YouTubeIcon /></div>
                   <div>
                     <span className="inline-block px-3 py-1 mb-2 bg-white bg-opacity-30 text-white text-xs font-semibold rounded-full">FEATURED</span>
-                    <h3 className='text-2xl md:text-3xl font-bold text-white mb-2'>{youtubeChannel.label}</h3>
-                    <p className="text-white text-opacity-90">{youtubeChannel.description}</p>
+                    <h3 className='text-xl md:text-3xl font-bold text-white mb-2'>{youtubeChannel.label}</h3>
+                    <p className="text-white text-opacity-90 text-sm md:text-base">{youtubeChannel.description}</p>
                   </div>
                 </div>
-                <div className="text-right">
+                <div className="text-left md:text-right">
                   <p className="text-white text-lg font-semibold">{youtubeChannel.value}</p>
                   <p className="text-white text-opacity-80 text-sm">Subscribe to my channel</p>
                 </div>
