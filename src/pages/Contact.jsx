@@ -6,6 +6,12 @@ const YouTubeIcon = () => (
   </svg>
 );
 
+const LinkedInIcon = () => (
+  <svg className="w-full h-full" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.475-2.236-1.986-2.236-1.081 0-1.722.725-2.004 1.428-.103.249-.129.597-.129.946v5.431h-3.553s.047-8.81 0-9.728h3.553v1.375c.429-.663 1.197-1.608 2.905-1.608 2.122 0 3.715 1.388 3.715 4.369v5.592zM5.337 8.855c-1.144 0-1.915-.759-1.915-1.71 0-.956.77-1.71 1.958-1.71 1.187 0 1.927.754 1.940 1.71 0 .951-.753 1.71-1.983 1.71zm1.582 11.597H3.635V9.024h3.284v11.428zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+  </svg>
+);
+
 const Contact = () => {
   const contactMethods = [
     {
@@ -16,7 +22,7 @@ const Contact = () => {
       description: 'Reach out for collaborations or inquiries'
     },
     {
-      icon: <span className="text-4xl">💼</span>,
+      icon: <div className="w-9 h-9" style={{color: '#0077B5'}}><LinkedInIcon /></div>,
       label: 'LinkedIn',
       value: 'Jean Carlos Vega',
       link: 'https://linkedin.com/in/jean-carlos-vega',
