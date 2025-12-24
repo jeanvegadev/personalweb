@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import logo from '../logo.svg';
 import { Dialog,  Popover, Switch } from '@headlessui/react'
 import {
   Bars3Icon,
@@ -18,67 +17,69 @@ export default function MenuHeader({toggleDarkMode, c1}) {
   const combinedClassName = `${baseClassName} ${c1}`;
 
   return (
-    <header>
-      <nav className="mx-auto flex max-w-7xl items-center justify-between p-3 lg:px-8" aria-label="Global">
+    <header className="sticky top-0 z-40 bg-white/80 backdrop-blur-md border-b border-slate-200/50">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between p-4 lg:px-8" aria-label="Global">
         <div className="flex lg:flex-1">
-          <a href="#" className="-m-1.5">
-            <span className="sr-only">Jean Vega</span>
-            <img src={logo} className="App-logo" alt="logo" />
+          <a href="#home" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
+            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-indigo-600 to-blue-500">
+              <span className="text-white font-bold text-lg">JV</span>
+            </div>
+            <span className="hidden sm:inline font-bold text-gray-900 text-lg">Jean Vega</span>
           </a>
         </div>
         <div className="flex lg:hidden">
           <button
             type="button"
-            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700 hover:bg-gray-100 transition-colors"
             onClick={() => setMobileMenuOpen(true)}
           >
             <span className="sr-only">Open main menu</span>
             <Bars3Icon className="h-6 w-6" aria-hidden="true" />
           </button>
         </div>
-        <Popover.Group className="hidden lg:flex lg:gap-x-12">
-          <a href="#home">Home</a>
-          <a href="#projects">Projects</a>
-          <a href="#about">About me</a>
-          <a href="#contact">Contact</a>
+        <Popover.Group className="hidden lg:flex lg:gap-x-1">
+          <a href="#home" className="px-3 py-2 text-sm font-semibold text-gray-700 hover:text-indigo-600 hover:bg-gray-50 rounded-lg transition-all duration-200">Home</a>
+          <a href="#projects" className="px-3 py-2 text-sm font-semibold text-gray-700 hover:text-indigo-600 hover:bg-gray-50 rounded-lg transition-all duration-200">Projects</a>
+          <a href="#about" className="px-3 py-2 text-sm font-semibold text-gray-700 hover:text-indigo-600 hover:bg-gray-50 rounded-lg transition-all duration-200">About me</a>
+          <a href="#contact" className="px-3 py-2 text-sm font-semibold text-gray-700 hover:text-indigo-600 hover:bg-gray-50 rounded-lg transition-all duration-200">Contact</a>
         </Popover.Group>
-        <div className="flex lg:flex lg:flex-1 lg:justify-end">
-        <Switch
-                checked={agreed}
-                onClick={toggleDarkMode}
-                onChange={setAgreed}
+        <div className="flex lg:flex lg:flex-1 lg:justify-end lg:items-center lg:gap-4">
+          <div className="p-1 bg-gray-100 rounded-full flex items-center">
+            <Switch
+              checked={agreed}
+              onClick={toggleDarkMode}
+              onChange={setAgreed}
+              className={classNames(
+                agreed ? 'bg-indigo-600' : 'bg-gray-300',
+                'flex w-10 flex-none cursor-pointer rounded-full p-px ring-1 ring-inset ring-gray-900/10 transition-colors duration-200 ease-in-out focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600'
+              )}
+            >
+              <span className="sr-only">Toggle dark mode</span>
+              <span
+                aria-hidden="true"
                 className={classNames(
-                  agreed ? 'bg-indigo-600' : 'bg-gray-200',
-                  'flex w-8 flex-none cursor-pointer rounded-full p-px ring-1 ring-inset ring-gray-900/5 transition-colors duration-200 ease-in-out focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600'
+                  agreed ? 'translate-x-4' : 'translate-x-0.5',
+                  'h-4 w-4 transform rounded-full bg-white shadow-md ring-1 ring-gray-900/10 transition duration-200 ease-in-out'
                 )}
-              >
-                <span className="sr-only">Agree to policies</span>
-                <span
-                  aria-hidden="true"
-                  className={classNames(
-                    agreed ? 'translate-x-3.5' : 'translate-x-0',
-                    'h-4 w-4 transform rounded-full bg-white shadow-sm ring-1 ring-gray-900/5 transition duration-200 ease-in-out'
-                  )}
-                />
-              </Switch>
+              />
+            </Switch>
+          </div>
         </div>
       </nav>
       <Dialog as="div" className="lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
         
         <div className="fixed inset-0 z-10" />
         <Dialog.Panel className={combinedClassName}>
-          <div className="flex items-center justify-between">
-            <a href="#" className="-m-1.5 p-1.5">
-              <span className="sr-only">Your Company</span>
-              <img
-                className="h-8 w-auto"
-                src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-                alt=""
-              />
+          <div className="flex items-center justify-between mb-6">
+            <a href="#home" className="flex items-center gap-2">
+              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-indigo-600 to-blue-500">
+                <span className="text-white font-bold text-lg">JV</span>
+              </div>
+              <span className="font-bold text-gray-900">Jean Vega</span>
             </a>
             <button
               type="button"
-              className="-m-2.5 rounded-md p-2.5"
+              className="-m-2.5 rounded-md p-2.5 hover:bg-gray-100 transition-colors"
               onClick={() => setMobileMenuOpen(false)}
             >
               <span className="sr-only">Close menu</span>
@@ -88,10 +89,10 @@ export default function MenuHeader({toggleDarkMode, c1}) {
           <div className="mt-6 flow-root">
             <div className="-my-6 divide-y divide-gray-500/10">
               <div className="space-y-2 py-6">
-                <a href="#home" onClick={() => setMobileMenuOpen(false)}  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 hover:bg-gray-50">Home</a>
-                <a href="#projects" onClick={() => setMobileMenuOpen(false)}  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7  hover:bg-gray-50">Projects</a>
-                <a href="#about" onClick={() => setMobileMenuOpen(false)}  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 hover:bg-gray-50">About me</a>
-                <a href="#contact" onClick={() => setMobileMenuOpen(false)}  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 hover:bg-gray-50">Contact</a>
+                <a href="#home" onClick={() => setMobileMenuOpen(false)} className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 transition-colors">Home</a>
+                <a href="#projects" onClick={() => setMobileMenuOpen(false)} className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 transition-colors">Projects</a>
+                <a href="#about" onClick={() => setMobileMenuOpen(false)} className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 transition-colors">About me</a>
+                <a href="#contact" onClick={() => setMobileMenuOpen(false)} className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 transition-colors">Contact</a>
               </div>
             </div>
           </div>
