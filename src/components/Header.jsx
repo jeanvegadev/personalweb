@@ -12,7 +12,7 @@ function classNames(...classes) {
 export default function MenuHeader({c1}) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
-  const baseClassName = 'fixed inset-y-0 right-0 z-10 w-full overflow-y-auto px-6 py-6 sm:max-w-sm sm:ring-2 sm:ring-green-900/90';
+  const baseClassName = 'fixed top-16 right-0 bottom-0 z-10 w-full overflow-y-auto px-6 py-6 sm:max-w-sm sm:ring-2 sm:ring-green-900/90';
   const combinedClassName = `${baseClassName} ${c1}`;
 
   return (
@@ -49,22 +49,6 @@ export default function MenuHeader({c1}) {
         
         <div className="fixed inset-0 z-10" />
         <Dialog.Panel className={combinedClassName}>
-          <div className="flex items-center justify-between mb-6">
-            <a href="#home" className="flex items-center gap-2">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-indigo-600 to-blue-500">
-                <span className="text-white font-bold text-lg">JV</span>
-              </div>
-              <span className="font-bold text-gray-900">Jean Vega</span>
-            </a>
-            <button
-              type="button"
-              className="-m-2.5 rounded-md p-2.5 hover:bg-gray-100 transition-colors"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              <span className="sr-only">Close menu</span>
-              <XMarkIcon className="h-6 w-6" aria-hidden="true" />
-            </button>
-          </div>
           <div className="mt-6 flow-root">
             <div className="-my-6 divide-y divide-gray-500/10">
               <div className="space-y-2 py-6">
