@@ -3,27 +3,38 @@ import jean from '../assets/images/jean_photo4.jpg'
 
 const Home = ({h1color}) => {
   return (
-    <section id="home" className="container mx-auto flex flex-col md:flex-row items-center justify-center md:justify-between px-6 pt-1 lg:px-8">
-      <div className="mx-auto w-3/5 md:w-3/5 py-4 sm:py-4 lg:py-4 order-2 md:order-1">
-        <div className="text-center">
-          <h1 className="text-4xl font-bold tracking-tight sm:text-6xl">
-            <span className={h1color}>Hi, I'm Jean Vega</span>
-          </h1>
-          <h2 className="text-3xl font-bold tracking-tight text-blue-500 sm:text-4xl">
-            and welcome to my website
-          </h2>
-          <p className="mt-6 text-lg leading-8 text-gray-600">
-            I am a software engineer from Peru and have more than 7 years of experience. I'm a skilled programmer using Python, SQL and Javascript. I also have worked with C, C++, Assembly, Java among others.
-          </p>
-          <div className="mt-10 flex items-center justify-center gap-x-6">
-            <a href="#projects" className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Projects</a>
-            <a href="#contact" className="text-sm font-semibold leading-6">Contact <span aria-hidden="true">→</span></a>
+    <section id="home" className="min-h-screen flex items-center justify-center bg-gradient-to-br from-white to-slate-50 px-6 py-20 lg:px-8">
+      <div className="container mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 items-center">
+          {/* Text Content */}
+          <div className="order-2 md:order-1 flex flex-col justify-center">
+            <h1 className="text-5xl md:text-6xl font-bold tracking-tight leading-tight mb-4">
+              <span className={h1color}>Hi, I'm Jean Vega</span>
+            </h1>
+            <p className="text-xl md:text-2xl font-semibold text-indigo-600 mb-6">
+              Software Engineer & Full-Stack Developer
+            </p>
+            <p className="text-lg leading-relaxed text-gray-600 mb-8 max-w-lg">
+              I'm a passionate software engineer from Peru with 7+ years of experience building robust applications. Proficient in Python, SQL, and JavaScript with expertise in backend and frontend development, robotics, and microcontroller programming.
+            </p>
+            <div className="flex flex-wrap gap-4">
+              <a href="#projects" className="inline-flex items-center px-6 py-3 rounded-lg bg-indigo-600 text-white font-semibold hover:bg-indigo-700 transition-colors duration-200 shadow-lg hover:shadow-xl">
+                View My Work
+              </a>
+              <a href="#contact" className="inline-flex items-center px-6 py-3 rounded-lg border-2 border-indigo-600 text-indigo-600 font-semibold hover:bg-indigo-50 transition-colors duration-200">
+                Get in Touch
+              </a>
+            </div>
+          </div>
+          
+          {/* Image */}
+          <div className="order-1 md:order-2 flex justify-center md:justify-end">
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-indigo-600 to-blue-500 rounded-2xl blur-2xl opacity-30"></div>
+              <img src={jean} alt="Jean Vega" className="relative w-64 h-64 md:w-80 md:h-80 rounded-2xl object-cover shadow-2xl"/>
+            </div>
           </div>
         </div>
-      </div>
-      
-      <div className="w-2/5 md:w-2/5 mx-auto py-4 px-6 order-1 md:order-2">
-        <img src={jean} alt="jean" className="rounded-full"/>
       </div>
     </section>
   );
